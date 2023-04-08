@@ -25,6 +25,7 @@ class NewsService with ChangeNotifier {
     categories.forEach((element) {
       categoryArrticles[element.name] = [];
     });
+    getArticlesByCategory('business');
   }
 
   Map<String, List<Article>> categoryArrticles = {};
@@ -45,9 +46,11 @@ class NewsService with ChangeNotifier {
     notifyListeners();
   }
 
+  List<Article> get getArticulosCategoriasSeleccionada =>
+      categoryArrticles[selectedCategory]!;
+
   getArticlesByCategory(String category) async {
     if (categoryArrticles[category]!.isNotEmpty) {
-      print(categoryArrticles[category]);
       return categoryArrticles[category];
     }
 
@@ -57,6 +60,5 @@ class NewsService with ChangeNotifier {
     final newsResponse = newsResponseFromJson(resp.body);
     categoryArrticles[category]!.addAll(newsResponse.articles);
     notifyListeners();
-    print(categoryArrticles[category]);
   }
 }
