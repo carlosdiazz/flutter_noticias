@@ -31,6 +31,16 @@ class _Tab3PagesState extends State<Tab3Pages> {
         body: SafeArea(
             child: _juegos == null
                 ? const Center(child: CircularProgressIndicator())
-                : Text('data')));
+                : _juegos!.isEmpty
+                    ? const Center(
+                        child: Text('No juegos'),
+                      )
+                    : ListView.builder(
+                        itemCount: _juegos!.length,
+                        itemBuilder: (context, index) => ListTile(
+                          leading: const Icon(Icons.gamepad),
+                          title: Text(_juegos![index].name),
+                        ),
+                      )));
   }
 }

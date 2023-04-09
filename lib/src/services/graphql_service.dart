@@ -36,7 +36,7 @@ class GraphQLService {
 
       List<JuegoModel> juegos =
           res.map((juego) => JuegoModel.fromJson(juego)).toList();
-
+      print(juegos[0].name);
       return juegos;
     } catch (error) {
       print(error);
