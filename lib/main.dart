@@ -3,8 +3,11 @@ import 'package:flutter_noticias/src/screen/screen.dart';
 import 'package:flutter_noticias/src/services/services.dart';
 import 'package:flutter_noticias/src/theme/theme_black.dart';
 import 'package:provider/provider.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  return runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

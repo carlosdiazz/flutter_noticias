@@ -32,7 +32,9 @@ class _Navegacion extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outline), label: 'Para ti'),
-          BottomNavigationBarItem(icon: Icon(Icons.public), label: 'encabezado')
+          BottomNavigationBarItem(
+              icon: Icon(Icons.public), label: 'encabezado'),
+          BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: 'test')
         ]);
   }
 }
@@ -58,7 +60,8 @@ class _Paginas extends StatelessWidget {
         //Container(
         //  color: Colors.green,
         //)
-        Tab2Pages()
+        Tab2Pages(),
+        Tab3Pages()
       ],
     );
   }
